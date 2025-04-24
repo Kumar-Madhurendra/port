@@ -7,36 +7,62 @@
     <title>Kumar Madhurendra - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1E40AF',
-                        dark: '#1F2937',
+                        primary: '#111827', // Gray-900 (almost black)
+                        secondary: '#374151', // Gray-700 (dark gray)
+                        accent: '#6B7280', // Gray-500 (medium gray)
+                        dark: '#000000', // Black
+                        light: '#FFFFFF', // White
                     }
                 }
             }
         }
     </script>
+    <style>
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-white text-gray-900 font-sans">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50 transition-all">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary">KM</a>
+            <a href="#" class="text-2xl font-bold text-primary hover:text-secondary transition-all">KM</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#skills" class="hover:text-primary transition">Skills</a>
-                <a href="#projects" class="hover:text-primary transition">Projects</a>
-                <a href="#certifications" class="hover:text-primary transition">Certifications</a>
-                <a href="#experience" class="hover:text-primary transition">My Recent Work</a>
-                <a href="#contact" class="hover:text-primary transition">Contact</a>
+                <a href="#about" class="hover:text-primary transition-all hover:underline underline-offset-4">About</a>
+                <a href="#skills"
+                    class="hover:text-primary transition-all hover:underline underline-offset-4">Skills</a>
+                <a href="#projects"
+                    class="hover:text-primary transition-all hover:underline underline-offset-4">Projects</a>
+                <a href="#certifications"
+                    class="hover:text-primary transition-all hover:underline underline-offset-4">Certifications</a>
+                <a href="#experience" class="hover:text-primary transition-all hover:underline underline-offset-4">My
+                    Recent Work</a>
+                <a href="#contact"
+                    class="hover:text-primary transition-all hover:underline underline-offset-4">Contact</a>
             </div>
             <a href="./Kumar-cv.pdf" download
-                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition hidden md:block">Download
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-all hover:shadow-lg hidden md:block">Download
                 CV</a>
             <button class="md:hidden text-gray-600" id="mobile-menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -48,532 +74,518 @@
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-inner" id="mobile-menu">
             <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-primary transition py-1">About</a>
-                <a href="#skills" class="hover:text-primary transition py-1">Skills</a>
-                <a href="#projects" class="hover:text-primary transition py-1">Projects</a>
-                <a href="#certifications" class="hover:text-primary transition py-1">Certifications</a>
-                <a href="#experience" class="hover:text-primary transition py-1">My Recent Work</a>
-                <a href="#contact" class="hover:text-primary transition py-1">Contact</a>
+                <a href="#about" class="hover:text-primary transition-all py-1">About</a>
+                <a href="#skills" class="hover:text-primary transition-all py-1">Skills</a>
+                <a href="#projects" class="hover:text-primary transition-all py-1">Projects</a>
+                <a href="#certifications" class="hover:text-primary transition-all py-1">Certifications</a>
+                <a href="#experience" class="hover:text-primary transition-all py-1">My Recent Work</a>
+                <a href="#contact" class="hover:text-primary transition-all py-1">Contact</a>
                 <a href="./Kumar-cv.pdf" download
-                    class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition inline-block text-center">Download
+                    class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-all hover:shadow-lg inline-block text-center">Download
                     CV</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+    <section id="about" class="py-32 min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Kumar Madhurendra</h1>
-                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Web Developer & Designer</h2>
-                <p class="text-gray-700 mb-8">Bachelor of Technology in Computer Science and Engineering with expertise
+            <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-7xl md:text-6xl font-bold mb-6 text-dark">Kumar Madhurendra</h1>
+                <h2 class="text-2xl md:text-3xl text-gray-700 mb-8">Web Developer & Designer</h2>
+                <p class="text-gray-700 mb-10 text-lg">Bachelor of Technology in Computer Science and Engineering with
+                    expertise
                     in React.js, Node.js, Express.js, and MongoDB. Passionate about creating responsive web applications
                     with modern UI/UX principles.</p>
                 <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#contact"
-                        class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Contact Me</a>
+                        class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition-all hover:shadow-lg hover:-translate-y-1">Contact
+                        Me</a>
                     <a href="#projects"
-                        class="border-2 border-primary text-primary px-6 py-3 rounded-md hover:bg-primary hover:text-white transition">View
+                        class="border-2 border-primary text-primary px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-all hover:shadow-lg hover:-translate-y-1">View
                         Projects</a>
                 </div>
                 <div class="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
                     <a href="https://github.com/mr-madhu"
-                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition">
-                        <i class="fab fa-github text-xl"></i>
+                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition-all hover:-translate-y-1">
+                        <i class="fab fa-github text-3xl"></i>
                         <span>github.com/mr-madhu</span>
                     </a>
                     <a href="https://linkedin.com/in/mrmadhu"
-                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition">
-                        <i class="fab fa-linkedin text-xl"></i>
+                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition-all hover:-translate-y-1">
+                        <i class="fab fa-linkedin text-3xl"></i>
                         <span>linkedin.com/in/mrmadhu</span>
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
                 <img src="./assets/images/WhatsApp Image 2025-02-20 at 08.26.02.jpeg" alt="Kumar Madhurendra"
-                    class="rounded-full w-56 h-56 md:w-80 md:h-80 object-cover shadow-xl border-4 border-white">
+                    class="rounded-full w-56 h-56 md:w-80 md:h-80 object-cover shadow-xl border-4 border-gray-200 hover:border-gray-400 transition-all hover:shadow-2xl">
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <!-- Visual Divider -->
+    <div class="w-full py-8 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">Skills & Technologies</h2>
-                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            <div class="w-full flex justify-center">
+                <div class="w-24 h-1 bg-primary"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 mt-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-4xl font-bold mb-4 text-dark">Skills & Technologies</h2>
+                <div class="w-32 h-1 bg-primary mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Languages -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="100">
                     <h3 class="text-xl font-bold mb-4 text-primary">Languages</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-cpp text-2xl text-blue-600 mr-3"></i>
+                                <i class="fab fa-cpp text-6xl text-blue-600 mr-3"></i>
                                 <span>C++</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-code text-2xl text-gray-700 mr-3"></i>
+                                <i class="fas fa-code text-7xl text-gray-800 mr-3"></i>
                                 <span>C</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-js text-2xl text-yellow-500 mr-3"></i>
+                                <i class="fab fa-js text-7xl text-yellow-500 mr-3"></i>
                                 <span>JavaScript</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
+                            <div class="flex items-center">
+                                <i class="fab fa-java text-7xl text-red-500 mr-3"></i>
+                                <span>Java</span>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Intermediate</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Frontend -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="200">
                     <h3 class="text-xl font-bold mb-4 text-primary">Frontend</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-react text-2xl text-blue-400 mr-3"></i>
+                                <i class="fab fa-react text-7xl text-blue-400 mr-3"></i>
                                 <span>React.js</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Expert</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-css3-alt text-2xl text-blue-500 mr-3"></i>
+                                <i class="fab fa-css3-alt text-7xl text-blue-500 mr-3"></i>
                                 <span>CSS</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-html5 text-2xl text-red-500 mr-3"></i>
+                                <i class="fab fa-html5 text-7xl text-orange-600 mr-3"></i>
                                 <span>HTML</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Expert</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-css3 text-2xl text-indigo-500 mr-3"></i>
+                                <i class="fab fa-css3 text-7xl text-indigo-500 mr-3"></i>
                                 <span>Tailwind</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Backend -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="300">
                     <h3 class="text-xl font-bold mb-4 text-primary">Backend</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-node-js text-2xl text-green-600 mr-3"></i>
+                                <i class="fab fa-node-js text-7xl text-green-600 mr-3"></i>
                                 <span>Node.js</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-node text-2xl text-green-500 mr-3"></i>
+                                <i class="fab fa-node text-7xl text-green-500 mr-3"></i>
                                 <span>Express.js</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
+                            <div class="flex items-center">
+                                <i class="fab fa-laravel text-7xl text-red-600 mr-3"></i>
+                                <span>Laravel</span>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Intermediate</span>
+                        </div>
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
+                            <div class="flex items-center">
+                                <i class="fab fa-php text-7xl text-indigo-600 mr-3"></i>
+                                <span>PHP</span>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Intermediate</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Database -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <!-- Databases -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="400">
                     <h3 class="text-xl font-bold mb-4 text-primary">Databases</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-database text-2xl text-blue-500 mr-3"></i>
+                                <i class="fas fa-database text-7xl text-orange-600 mr-3"></i>
                                 <span>MySQL</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-server text-2xl text-green-500 mr-3"></i>
+                                <i class="fas fa-server text-7xl text-green-600 mr-3"></i>
                                 <span>NoSQL</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
+                            <div class="flex items-center">
+                                <i class="fas fa-leaf text-7xl text-green-600 mr-3"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
+                            <div class="flex items-center">
+                                <i class="fas fa-cloud text-7xl text-blue-500 mr-3"></i>
+                                <span>Atlas</span>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- State Management -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="500">
                     <h3 class="text-xl font-bold mb-4 text-primary">State Management</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-box text-2xl text-purple-600 mr-3"></i>
+                                <i class="fas fa-box text-7xl text-purple-500 mr-3"></i>
                                 <span>Redux</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-sitemap text-2xl text-blue-600 mr-3"></i>
+                                <i class="fas fa-sitemap text-7xl text-blue-500 mr-3"></i>
                                 <span>Context API</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Expert</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-code-branch text-2xl text-green-600 mr-3"></i>
+                                <i class="fas fa-code-branch text-7xl text-green-600 mr-3"></i>
                                 <span>Reducer</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Other -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
+                <!-- Other Skills -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift hover-glow" data-aos="zoom-in"
+                    data-aos-duration="600" data-aos-delay="600">
                     <h3 class="text-xl font-bold mb-4 text-primary">Other Skills</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-docker text-2xl text-blue-500 mr-3"></i>
+                                <i class="fab fa-docker text-7xl text-blue-600 mr-3"></i>
                                 <span>Docker</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Intermediate</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Intermediate</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-github text-2xl text-gray-800 mr-3"></i>
+                                <i class="fab fa-github text-7xl text-gray-900 mr-3"></i>
                                 <span>GitHub</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fas fa-key text-2xl text-yellow-600 mr-3"></i>
+                                <i class="fas fa-key text-7xl text-yellow-500 mr-3"></i>
                                 <span>JWT</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-all">
                             <div class="flex items-center">
-                                <i class="fab fa-stripe text-2xl text-purple-600 mr-3"></i>
+                                <i class="fab fa-stripe text-7xl text-blue-700 mr-3"></i>
                                 <span>Stripe</span>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full">Advanced</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-blue-50 p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold mb-4 text-primary">Soft Skills</h3>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Problem-Solving</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Team Player</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Adaptability</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Communication</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Time Management</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Creativity</span>
-                </div>
-            </div>
+
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">Projects</h2>
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl font-bold mb-2 text-dark">Projects</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <!-- MovieBuffs Project -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/laavel-p.png" alt="MovieBuffs Project"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">MySecureVault</h3>
-                                <p class="text-gray-200 text-sm">Laravel, laravel-Santum, Mongodb, SMTP</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">January 2025</span>
-                                </div>
+            <div class="space-y-16">
+                <!-- MySecureVault Project - Image Right -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">MySecureVault</h3>
+                            <p class="text-gray-600 mb-6">MySecureVault is a secure media storage and management
+                                application built with Laravel and MongoDB. Here's an overview of the project.</p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Laravel</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">laravel-Santum</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Mongodb</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">SMPT</span>
+                            </div>
+
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/mr-madhu/MySecureVault"
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-2xl"></i>
+                                </a>
+                                <a href="http://127.0.0.1:8000/"
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt text-2xl"></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">MySecureVault is a secure media storage and management application
-                            built with Laravel and MongoDB. Here's an overview of the project.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Laravel</span>
-                                <span
-                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">laravel-Santum</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Mongodb</span>
-                                <span class="px-3 py-1 bg-orange-100 text-green-800 text-xs rounded-full">SMPT</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="https://github.com/mr-madhu/MySecureVault"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
-                                </a>
-                                <a href="http://127.0.0.1:8000/" class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
-                                </a>
-                            </div>
+                        <div class="md:w-1/2 bg-gray-300 relative overflow-hidden">
+                            <img src="./assets/images/laavel-p.png" alt="MySecureVault Project"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500">
                         </div>
                     </div>
                 </div>
 
-                <!-- E-learning Platform -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/ai-p.png" alt="E-learning Platform"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">MentorX</h3>
-                                <p class="text-gray-200 text-sm">React.js, TypeScript, Tailwind, API</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">December 2024</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">MentorX is designed to transform the way learners interact with
-                            subject matter by offering real-time, intelligent assistance through a sleek and intuitive
-                            interface. </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
+                <!-- MentorX - Image Left -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="200">
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">MentorX</h3>
+                            <p class="text-gray-600 mb-6">MentorX is designed to transform the way learners interact
+                                with subject matter by offering real-time, intelligent assistance through a sleek and
+                                intuitive interface.</p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
                                 <span
-                                    class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Typescript</span>
-                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">Tailwind</span>
-                                <span class="px-3 py-1 bg-red-100 text-black-800 text-xs rounded-full">Gemini-1.5
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">React.js</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">TypeScript</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Tailwind</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Gemini-1.5
                                     Flash</span>
                             </div>
-                            <div class="flex space-x-3">
+
+                            <div class="flex space-x-4">
                                 <a href="https://github.com/mr-madhu/Mentor-Nest-Ai"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-2xl"></i>
                                 </a>
                                 <a href="https://lucent-scone-a0965e.netlify.app/"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt text-2xl"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="md:w-1/2 bg-gray-300 relative overflow-hidden">
+                            <img src="./assets/images/ai-p.png" alt="MentorX Platform"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500">
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/josh.png" alt="E-learning Platform"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">UI-P</h3>
-                                <p class="text-gray-200 text-sm">React.js, Node.js, JWT, Stripe, Tailwind</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">December 2024</span>
-                                </div>
+                <!-- UI-P - Image Right -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="300">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">UI-P</h3>
+                            <p class="text-gray-600 mb-6">I designed and developed Animated UI Interface leveraging
+                                HTML, CSS, and JavaScript, focused on delivering a sleek, modern, and intuitive user
+                                experience.</p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Html</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Css</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">JavaScript</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">I designed and developed Animated UI Interface leveraging HTML,
-                            CSS, and JavaScript, focused on delivering a sleek, modern, and intuitive user experience.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Html</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Css</span>
-                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">JavaScript</span>
-                            </div>
-                            <div class="flex space-x-3">
+
+                            <div class="flex space-x-4">
                                 <a href="https://github.com/mr-madhu/UI-P"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-2xl"></i>
                                 </a>
                                 <a href="https://sparkly-crepe-a25743.netlify.app/"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt text-2xl"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="md:w-1/2 bg-gray-300 relative overflow-hidden">
+                            <img src="./assets/images/josh.png" alt="UI-P Interface"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500">
                         </div>
                     </div>
                 </div>
 
+                <!-- F-Weather - Image Left -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="400">
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Know Your Weather</h3>
+                            <p class="text-gray-600 mb-6">Weather App using React.js, Tailwind CSS, and the OpenWeather
+                                API, designed to deliver accurate and real-time weather updates for any city worldwide.
+                            </p>
 
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/weather.png" alt="Shopping Cart App"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">F-Weather</h3>
-                                <p class="text-gray-200 text-sm">React.js, OpenWeather-API, Reducer, Tailwing</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">April - July 2023</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Weather App using React.js, Tailwind CSS, and the OpenWeather API,
-                            designed to deliver accurate and real-time weather updates for any city worldwide. </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Tailwind</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Open-Weather
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">React.js</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Tailwind</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Open-Weather
                                     API</span>
                             </div>
-                            <div class="flex space-x-3">
+
+                            <div class="flex space-x-4">
                                 <a href="https://github.com/mr-madhu/weather-web-application"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-2xl"></i>
                                 </a>
                                 <a href="https://famous-zabaione-c5a401.netlify.app/"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt text-2xl"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="md:w-1/2 bg-gray-300 relative overflow-hidden">
+                            <img src="./assets/images/weather.png" alt="F-Weather App"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500">
                         </div>
                     </div>
                 </div>
 
+                <!-- Shopping Cart Application - Image Right -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="500">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Shopping Cart Application</h3>
+                            <p class="text-gray-600 mb-6">Re-developed a shopping cart application using React.js,
+                                optimizing state management with Context API and Reducer. Implemented seamless product
+                                selection, dynamic cart updates, and efficient checkout flow.</p>
 
-
-                <!-- Knowe AB Internship -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/shop-p.png" alt="Shopping Cart App"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">Shopping Cart Application</h3>
-                                <p class="text-gray-200 text-sm">React.js, Context API, Reducer, moduloCSS</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">April - July 2023</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Re-developed a shopping cart application using React.js,
-                            optimizing state management with Context API and Reducer. Implemented seamless product
-                            selection, dynamic cart updates, and efficient checkout flow.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Context
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">React.js</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Context
                                     API</span>
                                 <span
-                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Reducer</span>
+                                    class="px-3 py-1 bg-gray-200 text-gray-800 text-xs rounded-full hover:bg-gray-300 transition-all">Reducer</span>
                             </div>
-                            <div class="flex space-x-3">
+
+                            <div class="flex space-x-4">
                                 <a href="https://github.com/mr-madhu/Shopping-Cart-Using-React"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-2xl"></i>
                                 </a>
                                 <a href="https://loquacious-tartufo-c3008b.netlify.app/"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                    class="text-gray-500 hover:text-primary transition-all hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt text-2xl"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="md:w-1/2 bg-gray-300 relative overflow-hidden">
+                            <img src="./assets/images/shop-p.png" alt="Shopping Cart App"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500">
                         </div>
                     </div>
                 </div>
 
-
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-64 bg-gray-300 relative">
-                        <img src="./assets/images/php.jpeg" alt="Shopping Cart App" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-1">GoN-Post</h3>
-                                <p class="text-gray-200 text-sm">php, phpmyadmin, talwind</p>
-                                <div class="flex items-center text-sm text-gray-200 mt-2">
-                                    <span class="mr-3">April - July 2023</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">This is a full-featured, dynamic blog website developed using PHP,
-                            MySQL, and phpMyAdmin, offering distinct roles for Users and Administrators. The platform
-                            allows real-time content creation, management, and interaction, making it an ideal solution
-                            for personal or community blogging with strong admin oversight.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">PHP</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">sql</span>
-                                <span
-                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">php-myAdmin</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="https://github.com/mr-madhu/GoN-Post"
-                                    class="text-gray-500 hover:text-primary transition">
-                                    <i class="fab fa-github text-lg"></i>
-                                </a>
-                                <a href="#" class="text-gray-500 hover:text-primary transition">
-                                    <i class="fas fa-external-link-alt text-lg"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- GoN-Post - Image Left -->
 
 
                 <!-- Achievements -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">Achievements</h3>
-                        <ul class="space-y-4">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="700">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-primary">Achievements</h3>
+                        <ul class="space-y-6">
                             <li class="flex items-start">
-                                <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                                <i class="fas fa-trophy text-3xl text-yellow-500 mr-4 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold">3rd Runner-up in WEB-A-THON HACKATHON</h4>
-                                    <p class="text-gray-600 text-sm">24-hour event focused on web development</p>
+                                    <h4 class="font-semibold text-lg">3rd Runner-up in WEB-A-THON HACKATHON</h4>
+                                    <p class="text-gray-600">24-hour event focused on web development</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-award text-yellow-500 mr-3 mt-1"></i>
+                                <i class="fas fa-award text-3xl text-yellow-500 mr-4 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold">Developer Badge in GDG(2025) Solution Challenge</h4>
-                                    <p class="text-gray-600 text-sm">Recognized for innovative solution development</p>
+                                    <h4 class="font-semibold text-lg">Developer Badge in GDG(2025) Solution Challenge
+                                    </h4>
+                                    <p class="text-gray-600">Recognized for innovative solution development</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-code text-yellow-500 mr-3 mt-1"></i>
+                                <i class="fas fa-code text-3xl text-yellow-500 mr-4 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold">Solved 200+ DSA problems on Leetcode</h4>
-                                    <p class="text-gray-600 text-sm">Demonstrates strong algorithmic problem-solving
-                                        skills</p>
-                                </div>
-                            </li>
-
-                            <li class="flex items-start">
-                                <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold"></h4>
-                                    <p class="text-gray-600 text-sm">24-hour event focused on web development</p>
+                                    <h4 class="font-semibold text-lg">Solved 200+ DSA problems on Leetcode</h4>
+                                    <p class="text-gray-600">Demonstrates strong algorithmic problem-solving skills</p>
                                 </div>
                             </li>
                         </ul>
@@ -584,135 +596,145 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20">
+    <section id="certifications" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">Certifications & Courses</h2>
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl font-bold mb-2 text-dark">Certifications & Courses</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <!-- Certificate 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/react_certificate.png" alt="React Certification"
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Advanced React Certification</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Advanced React Certification</h3>
                         <p class="text-gray-600 text-sm mb-4">META</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">January 2025</span>
                             <a href="https://www.coursera.org/account/accomplishments/verify/EKXMFAVNLXZ8"
-                                class="text-primary hover:underline text-sm">View Certificate</a>
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certificate 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/udemy.png" alt="Data Structures Certificate"
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Advance Python certification</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Advance Python certification</h3>
                         <p class="text-gray-600 text-sm mb-4">Coursera</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">July 2024</span>
                             <a href="https://www.udemy.com/certificate/UC-d3c7c223-9d03-45e4-ac96-c396786ef566/"
-                                class="text-primary hover:underline text-sm">View Certificate</a>
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certificate 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/javascript.png" alt="Server-side JavaScript Certificate"
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Bootcamp in Html, Css, and Javascript</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Bootcamp in Html, Css, and Javascript</h3>
                         <p class="text-gray-600 text-sm mb-4">Coursera</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">May 2024</span>
-                            <a href="#" class="text-primary hover:underline text-sm">View Certificate</a>
+                            <a href="#"
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certificate 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/coding spoon.png" alt="DSA "
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Data Structure Algorithm</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Data Structure Algorithm</h3>
                         <p class="text-gray-600 text-sm mb-4">Coding Spoon</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">October 2023</span>
                             <a href="https://ornate-lolly-8235f8.netlify.app"
-                                class="text-primary hover:underline text-sm">View Certificate</a>
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- //certificate 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <!-- Certificate 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/php.png" alt="DSA "
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Building Web Application in PHP</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Building Web Application in PHP</h3>
                         <p class="text-gray-600 text-sm mb-4">coursera</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Decemebr 2024</span>
                             <a href="https://www.coursera.org/account/accomplishments/verify/0ZTOTPKRL20Q"
-                                class="text-primary hover:underline text-sm">View Certificate</a>
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- certificcate 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <!-- Certificate 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift transition-all group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                     <div class="h-64 overflow-hidden">
                         <img src="./assets/images/e-com_certi.png" alt="DSA "
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6 border-t">
-                        <h3 class="text-lg font-bold mb-2">Certification of participation</h3>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Certification of participation</h3>
                         <p class="text-gray-600 text-sm mb-4">Scalar MasterClass</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">January 2025</span>
                             <a href="https://cerulean-zabaione-478b1e.netlify.app"
-                                class="text-primary hover:underline text-sm">View Certificate</a>
+                                class="text-primary hover:text-secondary transition-all text-sm hover:underline">View
+                                Certificate</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Training -->
-                <div
-                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group col-span-1 sm:col-span-2 md:col-span-3">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4 text-primary">Training</h3>
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <div>
-                                    <h4 class="text-lg font-bold">Edu-Versity - Campus Ambassador</h4>
-                                    <p class="text-gray-600">December 2023 - January 2024</p>
-                                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Training</h3>
+                    <div class="bg-gray-100 p-6 rounded-lg hover:shadow-md transition-all">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Edu-Versity - Campus Ambassador</h4>
+                                <p class="text-gray-600">December 2023 - January 2024</p>
                             </div>
-                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                <li>Generated leads through various channels, expanding outreach engagement</li>
-                                <li>Engaged with potential prospects via cold calling, email, texts, successfully
-                                    driving registrations</li>
-                                <li>Facilitated online educational sessions as needed, ensuring valuable learning
-                                    experiences</li>
-                            </ul>
                         </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Generated leads through various channels, expanding outreach engagement</li>
+                            <li>Engaged with potential prospects via cold calling, email, texts, successfully
+                                driving registrations</li>
+                            <li>Facilitated online educational sessions as needed, ensuring valuable learning
+                                experiences</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -720,23 +742,24 @@
     </section>
 
     <!-- Experience Section -->
-    <!-- training 1 section -->
     <section id="experience" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">My Recent Work</h2>
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl font-bold mb-2 text-dark">My Recent Work</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
 
-            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">"Every action you take today is a step towards
+            <p class="text-center text-slate-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="100">"Every action you take today is a step towards
                 shaping your tomorrow."</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 <!-- Work Item 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-red-50 relative overflow-hidden">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="200">
+                    <div class="h-80 bg-red-50 relative overflow-hidden group">
                         <img src="./assets/images/team.jpeg" alt="Certificate"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">As part of the prestigious Nirev Hackathon, I collaborated with a
@@ -748,10 +771,11 @@
                 </div>
 
                 <!-- Work Item 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-red-50 relative overflow-hidden">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="300">
+                    <div class="h-80 bg-red-50 relative overflow-hidden group">
                         <img src="./assets/images/Appriciation.jpeg" alt="Certificate"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Upon completing my work, I was honored to receive a certificate
@@ -761,10 +785,11 @@
                 </div>
 
                 <!-- Work Item 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-green-50 relative overflow-hidden">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="400">
+                    <div class="h-80 bg-green-50 relative overflow-hidden group">
                         <img src="./assets/images/ngo.jpeg" alt="Educational Event"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Last day, we organized a team to conduct a one-day educational
@@ -775,14 +800,14 @@
                 </div>
             </div>
 
-            <!-- training 2 section -->
-
+            <!-- Second row of work items -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Work Item 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-blue-50 relative overflow-hidden">
+                <!-- Work Item 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="500">
+                    <div class="h-80 bg-blue-50 relative overflow-hidden group">
                         <img src="./assets/images/coputers.jpeg" alt="Computers"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">As part of my technical training, I worked extensively with
@@ -791,11 +816,12 @@
                     </div>
                 </div>
 
-                <!-- Work Item 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-yellow-50 relative overflow-hidden">
+                <!-- Work Item 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="600">
+                    <div class="h-80 bg-yellow-50 relative overflow-hidden group">
                         <img src="./assets/images/gdg.png" alt="Developer Certificate"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">I earned recognition as a certified developer after completing
@@ -803,13 +829,13 @@
                             responsive and interactive web applications.</p>
                     </div>
                 </div>
-                <!-- Debug comment added -->
 
-                <!-- Work Item 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="h-80 bg-purple-50 relative overflow-hidden">
+                <!-- Work Item 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift transition-all" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="700">
+                    <div class="h-80 bg-purple-50 relative overflow-hidden group">
                         <img src="./assets/images/nirev.png" alt="Nirev"
-                            class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                            class="absolute top-0 left-0 w-full h-auto object-cover object-top transform group-hover:scale-105 transition-all duration-500">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">During my time with Nirev, I participated in collaborative team
@@ -822,124 +848,165 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">Get In Touch</h2>
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl font-bold mb-2 text-dark">Get In Touch</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Feel free to contact me for any work or suggestions</p>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Feel free to contact me for any work or suggestions</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Info -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-lift hover-glow" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Contact Information</h3>
 
                     <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-blue-100 p-3 rounded-full text-primary">
-                                <i class="fas fa-phone-alt"></i>
+                        <div class="flex items-start space-x-4 transition-all hover:translate-x-1">
+                            <div class="bg-gray-200 p-4 rounded-full">
+                                <i class="fas fa-phone-alt text-2xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold">Phone</h4>
+                                <h4 class="text-lg font-semibold text-gray-800">Phone</h4>
                                 <p class="text-gray-600">+91-7889059280</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-blue-100 p-3 rounded-full text-primary">
-                                <i class="fas fa-envelope"></i>
+                        <div class="flex items-start space-x-4 transition-all hover:translate-x-1">
+                            <div class="bg-gray-200 p-4 rounded-full">
+                                <i class="fas fa-envelope text-2xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold">Email</h4>
+                                <h4 class="text-lg font-semibold text-gray-800">Email</h4>
                                 <p class="text-gray-600">kmadhurendra59@gmail.com</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-blue-100 p-3 rounded-full text-primary">
-                                <i class="fab fa-linkedin-in"></i>
+                        <div class="flex items-start space-x-4 transition-all hover:translate-x-1">
+                            <div class="bg-gray-200 p-4 rounded-full">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold">LinkedIn</h4>
+                                <h4 class="text-lg font-semibold text-gray-800">LinkedIn</h4>
                                 <a href="https://www.linkedin.com/in/mrmadhu"
-                                    class="text-primary hover:underline">linkedin.com/in/mrmadhu</a>
+                                    class="text-primary hover:text-secondary hover:underline transition-all">linkedin.com/in/mrmadhu</a>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-blue-100 p-3 rounded-full text-primary">
-                                <i class="fab fa-github"></i>
+                        <div class="flex items-start space-x-4 transition-all hover:translate-x-1">
+                            <div class="bg-gray-200 p-4 rounded-full">
+                                <i class="fab fa-github text-2xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold">GitHub</h4>
+                                <h4 class="text-lg font-semibold text-gray-800">GitHub</h4>
                                 <a href="https://github.com/mr-madhu"
-                                    class="text-primary hover:underline">github.com/mr-madhu</a>
+                                    class="text-primary hover:text-secondary hover:underline transition-all">github.com/mr-madhu</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-lift hover-glow" data-aos="fade-left"
+                    data-aos-duration="1000">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Send Me a Message</h3>
 
-                    <form>
+                    <form id="contactForm" action="contact.php" method="POST">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                            <input type="text" id="name"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                                placeholder="Your Name">
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all hover:border-primary"
+                                placeholder="Your Name" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                                placeholder="Your Email">
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all hover:border-primary"
+                                placeholder="Your Email" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <input type="text" id="subject"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                                placeholder="Subject">
+                            <input type="text" id="subject" name="subject"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all hover:border-primary"
+                                placeholder="Subject" required>
                         </div>
 
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="5"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                                placeholder="Your Message"></textarea>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all hover:border-primary"
+                                placeholder="Your Message" required></textarea>
                         </div>
 
                         <button type="submit"
-                            class="w-full bg-primary text-white py-3 rounded-md hover:bg-secondary transition">Send
+                            class="w-full bg-primary text-white py-3 rounded-md hover:bg-secondary transition-all hover:shadow-lg transform hover:-translate-y-1">Send
                             Message</button>
+
+                        <div id="formStatus" class="mt-4 text-center hidden">
+                            <p id="errorMessage" class="text-red-600 hidden">There was an error sending your message.
+                                Please try again.</p>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Success Modal Popup -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black opacity-50" id="modalOverlay"></div>
+        <div class="relative bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all"
+            data-aos="zoom-in" data-aos-duration="300">
+            <div class="p-6">
+                <div class="flex justify-end">
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+                        <svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                    <p class="text-gray-600 mb-6">Thank you for reaching out! I'll get back to you as soon as possible.
+                    </p>
+                    <button id="confirmButton"
+                        class="w-full bg-primary text-white py-3 rounded-md hover:bg-secondary transition-all hover:shadow-lg">
+                        Got it!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-black text-white py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-2xl font-bold">Kumar Madhurendra</h2>
+                <div class="mb-6 md:mb-0" data-aos="fade-right" data-aos-duration="800">
+                    <h2
+                        class="text-2xl font-bold bg-gradient-to-r from-gray-300 to-white text-transparent bg-clip-text">
+                        Kumar Madhurendra</h2>
                     <p class="text-gray-400 mt-2">Web Developer & Designer</p>
                 </div>
 
-                <div class="flex space-x-6">
-                    <a href="https://github.com/mr-madhu" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-github text-2xl"></i>
+                <div class="flex space-x-6" data-aos="fade-left" data-aos-duration="800">
+                    <a href="https://github.com/mr-madhu"
+                        class="text-gray-400 hover:text-white transition-all hover:-translate-y-1">
+                        <i class="fab fa-github text-3xl"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/kumarmadhurendra"
-                        class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-linkedin-in text-2xl"></i>
-                    </a>
-
+                        class="text-gray-400 hover:text-white transition-all hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-3xl"></i>
                     </a>
                 </div>
             </div>
@@ -952,9 +1019,20 @@
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu toggle -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JavaScript for mobile menu toggle and animations -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Initialize AOS
+            AOS.init({
+                once: true,
+                offset: 100,
+                duration: 800,
+                easing: 'ease-in-out'
+            });
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -969,6 +1047,100 @@
                     mobileMenu.classList.add('hidden');
                 });
             });
+
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar background change on scroll
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-sm');
+                    navbar.classList.remove('bg-white');
+                } else {
+                    navbar.classList.remove('bg-white/90', 'backdrop-blur-sm');
+                    navbar.classList.add('bg-white');
+                }
+            });
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const formStatus = document.getElementById('formStatus');
+                    const errorMessage = document.getElementById('errorMessage');
+                    const successModal = document.getElementById('successModal');
+
+                    // Hide status messages
+                    formStatus.classList.add('hidden');
+                    errorMessage.classList.add('hidden');
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+
+                    // Send form data via AJAX
+                    fetch('contact.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                // Show success modal
+                                successModal.classList.remove('hidden');
+                                document.body.classList.add('overflow-hidden'); // Prevent scrolling
+                                // Reset form
+                                contactForm.reset();
+                            } else {
+                                // Show error message
+                                formStatus.classList.remove('hidden');
+                                errorMessage.textContent = data.message || 'There was an error sending your message. Please try again.';
+                                errorMessage.classList.remove('hidden');
+                            }
+                        })
+                        .catch(error => {
+                            // Show error message
+                            formStatus.classList.remove('hidden');
+                            errorMessage.textContent = 'There was an error sending your message. Please try again.';
+                            errorMessage.classList.remove('hidden');
+                            console.error('Error:', error);
+                        });
+                });
+            }
+
+            // Modal handling
+            const successModal = document.getElementById('successModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const closeModal = document.getElementById('closeModal');
+            const confirmButton = document.getElementById('confirmButton');
+
+            // Close modal functions
+            function hideModal() {
+                successModal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            // Event listeners for modal
+            if (modalOverlay) modalOverlay.addEventListener('click', hideModal);
+            if (closeModal) closeModal.addEventListener('click', hideModal);
+            if (confirmButton) confirmButton.addEventListener('click', hideModal);
         });
     </script>
 </body>
