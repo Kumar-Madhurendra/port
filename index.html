@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Madhurendra - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        dark: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">KM</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#skills" class="hover:text-primary transition">Skills</a>
+                <a href="#projects" class="hover:text-primary transition">Projects</a>
+                <a href="#certifications" class="hover:text-primary transition">Certifications</a>
+                <a href="#experience" class="hover:text-primary transition">My Recent Work</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+            </div>
+            <a href="./Kumar-cv.pdf" download
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition hidden md:block">Download
+                CV</a>
+            <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-inner" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="hover:text-primary transition py-1">About</a>
+                <a href="#skills" class="hover:text-primary transition py-1">Skills</a>
+                <a href="#projects" class="hover:text-primary transition py-1">Projects</a>
+                <a href="#certifications" class="hover:text-primary transition py-1">Certifications</a>
+                <a href="#experience" class="hover:text-primary transition py-1">My Recent Work</a>
+                <a href="#contact" class="hover:text-primary transition py-1">Contact</a>
+                <a href="./Kumar-cv.pdf" download
+                    class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition inline-block text-center">Download
+                    CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Kumar Madhurendra</h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Web Developer & Designer</h2>
+                <p class="text-gray-700 mb-8">Bachelor of Technology in Computer Science and Engineering with expertise
+                    in React.js, Node.js, Express.js, and MongoDB. Passionate about creating responsive web applications
+                    with modern UI/UX principles.</p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#contact"
+                        class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition">Contact Me</a>
+                    <a href="#projects"
+                        class="border-2 border-primary text-primary px-6 py-3 rounded-md hover:bg-primary hover:text-white transition">View
+                        Projects</a>
+                </div>
+                <div class="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
+                    <a href="https://github.com/mr-madhu"
+                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition">
+                        <i class="fab fa-github text-xl"></i>
+                        <span>github.com/mr-madhu</span>
+                    </a>
+                    <a href="https://linkedin.com/in/mrmadhu"
+                        class="flex items-center gap-2 text-gray-700 hover:text-primary transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>linkedin.com/in/mrmadhu</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="./assets/images/WhatsApp Image 2025-02-20 at 08.26.02.jpeg" alt="Kumar Madhurendra"
+                    class="rounded-full w-56 h-56 md:w-80 md:h-80 object-cover shadow-xl border-4 border-white">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Skills & Technologies</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Languages -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Languages</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-cpp text-2xl text-blue-600 mr-3"></i>
+                                <span>C++</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-code text-2xl text-gray-700 mr-3"></i>
+                                <span>C</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-js text-2xl text-yellow-500 mr-3"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Frontend</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-react text-2xl text-blue-400 mr-3"></i>
+                                <span>React.js</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-css3-alt text-2xl text-blue-500 mr-3"></i>
+                                <span>CSS</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-html5 text-2xl text-red-500 mr-3"></i>
+                                <span>HTML</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-css3 text-2xl text-indigo-500 mr-3"></i>
+                                <span>Tailwind</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Backend</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-node-js text-2xl text-green-600 mr-3"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-node text-2xl text-green-500 mr-3"></i>
+                                <span>Express.js</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Databases</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-database text-2xl text-blue-500 mr-3"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-server text-2xl text-green-500 mr-3"></i>
+                                <span>NoSQL</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- State Management -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">State Management</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-box text-2xl text-purple-600 mr-3"></i>
+                                <span>Redux</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-sitemap text-2xl text-blue-600 mr-3"></i>
+                                <span>Context API</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-code-branch text-2xl text-green-600 mr-3"></i>
+                                <span>Reducer</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Other Skills</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-docker text-2xl text-blue-500 mr-3"></i>
+                                <span>Docker</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Intermediate</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-github text-2xl text-gray-800 mr-3"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-key text-2xl text-yellow-600 mr-3"></i>
+                                <span>JWT</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fab fa-stripe text-2xl text-purple-600 mr-3"></i>
+                                <span>Stripe</span>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold mb-4 text-primary">Soft Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Problem-Solving</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Team Player</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Adaptability</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Communication</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Time Management</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-primary shadow-sm">Creativity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Projects</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- MovieBuffs Project -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/laavel-p.png" alt="MovieBuffs Project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">MySecureVault</h3>
+                                <p class="text-gray-200 text-sm">Laravel, laravel-Santum, Mongodb, SMTP</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">January 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">MySecureVault is a secure media storage and management application
+                            built with Laravel and MongoDB. Here's an overview of the project.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Laravel</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">laravel-Santum</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Mongodb</span>
+                                <span class="px-3 py-1 bg-orange-100 text-green-800 text-xs rounded-full">SMPT</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/MySecureVault"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="http://127.0.0.1:8000/" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-learning Platform -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/ai-p.png" alt="E-learning Platform" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">MentorX</h3>
+                                <p class="text-gray-200 text-sm">React.js, TypeScript, Tailwind, API</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">December 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">MentorX is designed to transform the way learners interact with
+                            subject matter by offering real-time, intelligent assistance through a sleek and intuitive
+                            interface. </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
+                                <span
+                                    class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Typescript</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">Tailwind</span>
+                                <span class="px-3 py-1 bg-red-100 text-black-800 text-xs rounded-full">Gemini-1.5
+                                    Flash</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/Mentor-Nest-Ai"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://lucent-scone-a0965e.netlify.app/" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/josh.png" alt="E-learning Platform" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">UI-P</h3>
+                                <p class="text-gray-200 text-sm">React.js, Node.js, JWT, Stripe, Tailwind</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">December 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">I designed and developed Animated UI Interface leveraging HTML,
+                            CSS, and JavaScript, focused on delivering a sleek, modern, and intuitive user experience.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Html</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Css</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/UI-P"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://sparkly-crepe-a25743.netlify.app/" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/weather.png" alt="Shopping Cart App" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">F-Weather</h3>
+                                <p class="text-gray-200 text-sm">React.js, OpenWeather-API, Reducer, Tailwing</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">April - July 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Weather App using React.js, Tailwind CSS, and the OpenWeather API,
+                            designed to deliver accurate and real-time weather updates for any city worldwide. </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Tailwind</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Open-Weather
+                                    API</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/weather-web-application"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://famous-zabaione-c5a401.netlify.app/" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Knowe AB Internship -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/shop-p.png" alt="Shopping Cart App" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Shopping Cart Application</h3>
+                                <p class="text-gray-200 text-sm">React.js, Context API, Reducer, moduloCSS</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">April - July 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Re-developed a shopping cart application using React.js,
+                            optimizing state management with Context API and Reducer. Implemented seamless product
+                            selection, dynamic cart updates, and efficient checkout flow.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React.js</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Context
+                                    API</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Reducer</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/Shopping-Cart-Using-React"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://loquacious-tartufo-c3008b.netlify.app/" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-64 bg-gray-300 relative">
+                        <img src="./assets/images/php.jpeg" alt="Shopping Cart App" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-1">GoN-Post</h3>
+                                <p class="text-gray-200 text-sm">php, phpmyadmin, talwind</p>
+                                <div class="flex items-center text-sm text-gray-200 mt-2">
+                                    <span class="mr-3">April - July 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">This is a full-featured, dynamic blog website developed using PHP, MySQL, and phpMyAdmin, offering distinct roles for Users and Administrators. The platform allows real-time content creation, management, and interaction, making it an ideal solution for personal or community blogging with strong admin oversight.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">sql</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">php-myAdmin</span>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/mr-madhu/GoN-Post"
+                                    class="text-gray-500 hover:text-primary transition">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="#" class="text-gray-500 hover:text-primary transition">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Achievements -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Achievements</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">3rd Runner-up in WEB-A-THON HACKATHON</h4>
+                                    <p class="text-gray-600 text-sm">24-hour event focused on web development</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Developer Badge in GDG(2025) Solution Challenge</h4>
+                                    <p class="text-gray-600 text-sm">Recognized for innovative solution development</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-code text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Solved 200+ DSA problems on Leetcode</h4>
+                                    <p class="text-gray-600 text-sm">Demonstrates strong algorithmic problem-solving
+                                        skills</p>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start">
+                                <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold"></h4>
+                                    <p class="text-gray-600 text-sm">24-hour event focused on web development</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Certifications & Courses</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Certificate 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/react_certificate.png" alt="React Certification"
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Advanced React Certification</h3>
+                        <p class="text-gray-600 text-sm mb-4">META</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">January 2025</span>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/EKXMFAVNLXZ8" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/udemy.png" alt="Data Structures Certificate"
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Advance Python certification</h3>
+                        <p class="text-gray-600 text-sm mb-4">Coursera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">July 2024</span>
+                            <a href="https://www.udemy.com/certificate/UC-d3c7c223-9d03-45e4-ac96-c396786ef566/" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/javascript.png" alt="Server-side JavaScript Certificate"
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Bootcamp in Html, Css, and Javascript</h3>
+                        <p class="text-gray-600 text-sm mb-4">Coursera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">May 2024</span>
+                            <a href="#" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/coding spoon.png" alt="DSA "
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Data Structure Algorithm</h3>
+                        <p class="text-gray-600 text-sm mb-4">Coding Spoon</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">October 2023</span>
+                            <a href="https://ornate-lolly-8235f8.netlify.app" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //certificate 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/php.png" alt="DSA "
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Building Web Application in PHP</h3>
+                        <p class="text-gray-600 text-sm mb-4">coursera</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Decemebr 2024</span>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/0ZTOTPKRL20Q" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- certificcate 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./assets/images/e-com_certi.png" alt="DSA "
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6 border-t">
+                        <h3 class="text-lg font-bold mb-2">Certification of participation</h3>
+                        <p class="text-gray-600 text-sm mb-4">Scalar MasterClass</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">January 2025</span>
+                            <a href="https://cerulean-zabaione-478b1e.netlify.app" class="text-primary hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group col-span-1 sm:col-span-2 md:col-span-3">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-primary">Training</h3>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row justify-between mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold">Edu-Versity - Campus Ambassador</h4>
+                                    <p class="text-gray-600">December 2023 - January 2024</p>
+                                </div>
+                            </div>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Generated leads through various channels, expanding outreach engagement</li>
+                                <li>Engaged with potential prospects via cold calling, email, texts, successfully
+                                    driving registrations</li>
+                                <li>Facilitated online educational sessions as needed, ensuring valuable learning
+                                    experiences</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <!-- training 1 section -->
+    <section id="experience" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">My Recent Work</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">"Every action you take today is a step towards shaping your tomorrow."</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Work Item 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-red-50 relative overflow-hidden">
+                        <img src="./assets/images/team.jpeg" alt="Certificate" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">As part of the prestigious Nirev Hackathon, I collaborated with a dynamic team to develop an AI-powered chatbot built using React.js and TypeScript, with a custom backend API developed from scratch using On Demand API infrastructure. The goal was to provide intelligent, real-time conversational support for users in a scalable and secure manner.</p>
+                    </div>
+                </div>
+
+                <!-- Work Item 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-red-50 relative overflow-hidden">
+                        <img src="./assets/images/Appriciation.jpeg" alt="Certificate" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Upon completing my work, I was honored to receive a certificate
+                            from Dr. Bhim Singh, representing the NGO. This certificate serves as recognition of my
+                            dedication and contribution to the organization's mission.</p>
+                    </div>
+                </div>
+
+                <!-- Work Item 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-green-50 relative overflow-hidden">
+                        <img src="./assets/images/ngo.jpeg" alt="Educational Event" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Last day, we organized a team to conduct a one-day educational
+                            event. The aim was to empower individuals with knowledge and skills that could positively
+                            impact their lives. By the end of the day, participants walked away feeling empowered and
+                            inspired.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- training 2 section -->
+             
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Work Item 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-blue-50 relative overflow-hidden">
+                        <img src="./assets/images/coputers.jpeg" alt="Computers" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">As part of my technical training, I worked extensively with computer hardware and software systems, gaining hands-on experience in setup, configuration, and troubleshooting various platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Work Item 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-yellow-50 relative overflow-hidden">
+                        <img src="./assets/images/gdg.png" alt="Developer Certificate" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">I earned recognition as a certified developer after completing intensive training in web development technologies and demonstrating proficiency in building responsive and interactive web applications.</p>
+                    </div>
+                </div>
+
+                <!-- Work Item 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-80 bg-purple-50 relative overflow-hidden">
+                        <img src="./assets/images/nirev.png" alt="Nirev" class="absolute top-0 left-0 w-full h-auto object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">During my time with Nirev, I participated in collaborative team projects, learning valuable skills in project management, team coordination, and delivering solutions that meet client requirements and expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Feel free to contact me for any work or suggestions</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-primary">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Phone</h4>
+                                <p class="text-gray-600">+91-7889059280</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Email</h4>
+                                <p class="text-gray-600">kmadhurendra59@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-primary">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/mrmadhu"
+                                    class="text-primary hover:underline">linkedin.com/in/mrmadhu</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-primary">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">GitHub</h4>
+                                <a href="https://github.com/mr-madhu"
+                                    class="text-primary hover:underline">github.com/mr-madhu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Your Name">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Your Email">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Subject">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Your Message"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary text-white py-3 rounded-md hover:bg-secondary transition">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">Kumar Madhurendra</h2>
+                    <p class="text-gray-400 mt-2">Web Developer & Designer</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/mr-madhu" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kumarmadhurendra"
+                        class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                   
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 my-8">
+
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 Kumar Madhurendra. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
