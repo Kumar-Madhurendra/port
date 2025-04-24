@@ -912,7 +912,12 @@
                     data-aos-duration="1000">
                     <h3 class="text-2xl font-bold mb-6 text-primary">Send Me a Message</h3>
 
-                    <form id="contactForm" action="contact.php" method="POST">
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
                             <input type="text" id="name" name="name"
@@ -1082,48 +1087,43 @@
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+                    // Don't prevent default - let Netlify handle the form submission
 
-                    const formStatus = document.getElementById('formStatus');
-                    const errorMessage = document.getElementById('errorMessage');
                     const successModal = document.getElementById('successModal');
 
-                    // Hide status messages
-                    formStatus.classList.add('hidden');
-                    errorMessage.classList.add('hidden');
+                    // Only show modal on successful submission
+                    if (e.target.getAttribute('action') === '') {
+                        // This is the first submit, so let Netlify handle it
+                        // Netlify will reload the page after submission
+                        return;
+                    }
 
-                    // Get form data
-                    const formData = new FormData(contactForm);
-
-                    // Send form data via AJAX
-                    fetch('contact.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.status === 'success') {
-                                // Show success modal
-                                successModal.classList.remove('hidden');
-                                document.body.classList.add('overflow-hidden'); // Prevent scrolling
-                                // Reset form
-                                contactForm.reset();
-                            } else {
-                                // Show error message
-                                formStatus.classList.remove('hidden');
-                                errorMessage.textContent = data.message || 'There was an error sending your message. Please try again.';
-                                errorMessage.classList.remove('hidden');
-                            }
-                        })
-                        .catch(error => {
-                            // Show error message
-                            formStatus.classList.remove('hidden');
-                            errorMessage.textContent = 'There was an error sending your message. Please try again.';
-                            errorMessage.classList.remove('hidden');
-                            console.error('Error:', error);
-                        });
+                    // If we get here, it's after Netlify has processed the form
+                    // Check for success parameter in URL
+                    const urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.has('success')) {
+                        // Show success modal
+                        successModal.classList.remove('hidden');
+                        document.body.classList.add('overflow-hidden'); // Prevent scrolling
+                        // Clear URL parameters
+                        history.replaceState({}, document.title, window.location.pathname);
+                    }
                 });
             }
+
+            // Check for success parameter on page load (for when Netlify redirects back)
+            document.addEventListener('DOMContentLoaded', function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const successModal = document.getElementById('successModal');
+
+                if (urlParams.has('success')) {
+                    // Show success modal
+                    successModal.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden'); // Prevent scrolling
+                    // Clear URL parameters
+                    history.replaceState({}, document.title, window.location.pathname);
+                }
+            });
 
             // Modal handling
             const successModal = document.getElementById('successModal');

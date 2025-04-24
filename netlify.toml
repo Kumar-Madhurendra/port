@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+
+# Define form handling
+[forms]
+  # Define a form with the name "contact"
+  [forms.contact]
+    # Specify the fields that should be validated
+    [forms.contact.fields]
+      name = { required = true }
+      email = { required = true }
+      subject = { required = true }
+      message = { required = true }
+
+# Handle success redirect
+[[redirects]]
+  from = "/success"
+  to = "/?success=true"
+  status = 302 
