@@ -1,0 +1,144 @@
+/* Custom styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #1f2937;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero and section styling */
+.hero {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+/* Hover effects */
+.hover-zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-zoom:hover, .hover-zoom.touch-active {
+    transform: scale(1.05);
+}
+
+.hover-section {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-section:hover, .hover-section.touch-active {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-5px);
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    .mobile-menu {
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .mobile-menu:not(.hidden) {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-menu.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    /* Ensure buttons are large enough for touch targets */
+    button, .btn, a.btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Increase touch target size without affecting layout */
+    nav a, footer a {
+        position: relative;
+    }
+    
+    nav a::after, footer a::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        z-index: -1;
+    }
+}
+
+/* Touch device specific styles */
+.touch-device .card, 
+.touch-device button,
+.touch-device .project-card {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Navbar transition */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Active state for mobile navigation */
+.nav-active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* Contact form styling */
+.form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* Use system preference for dark mode (commented out until dark mode is implemented)
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1f2937;
+        color: #f9fafb;
+    }
+}
+*/ 
